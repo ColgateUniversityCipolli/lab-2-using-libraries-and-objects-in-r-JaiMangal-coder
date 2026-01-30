@@ -69,6 +69,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 #| include: false
 # Load Libraries here
 library(esquisse)
+library(plotly)
 ```
 
 * Use `R` [@R] to complete the tasks below. Make sure to start your solutions in on a new line that starts with "**Solution**:".
@@ -84,6 +85,7 @@ Install the `esquisse` package for `R`. Report the code below, ensuring to set t
 #| eval: false
 #| size: "scriptsize"
 install.packages('esquisse')
+install.packages('plotly') #needed to resolve error
 ```
 
 ## Part b
@@ -132,8 +134,12 @@ i. Select `palmerpenguins` from the "Select an environment in which to search:" 
 ii. Drag `body_mass_g` to the X box and `species` to the fill box. 
 iii. Describe what you see in words. What can you conclude about Adelie, Chinstrap, and Gentoo penguins based on the resulting plot? 
 
+**Solution**
+
+I see a histogram of body mass of various species of penguins (Adelie, Chinstrap, and Gentoo) versus the count of each of these penguins with their weights. I see that on average, the Gentoo penguins are the heaviest, trailed by the Chinstrap and Adelie. The visualization does not show clearly if the Chinstrap or Adelie are heavier, but it shows that there are more counts of Adelie penguins in specific weights than either the Chinstrap or Gentoo. Thus, there may have been more measurements taken on the Adelie penguins than the other species.
+
 # Objects and Vectors
-Create the following vectors in `R`. In some cases, you may be able to use `seq()` or `rep()` while in others you cannot. Use these functions when possible, otherwise manually create the vector and explain why that was necessary.
+Create the following vectors in `R`. In some cases, you may be able to use `seq()` or `rep()`, while in others you cannot. Use these functions when possible, otherwise manually create the vector and explain why that was necessary.
 
 **Some Snowday Notes**
 
@@ -186,11 +192,32 @@ where $F_0=0$ and $F_1=1$.
 
 Create a vector of the first 10 Fibonacci numbers.
 
+**Solution**
+
+Here I was unable to use either seq() or rep() because the Fibonacci Sequence does not rely on incrementing on a set amount, nor does it involve any repitition of numbers. 
+```{r}
+#| size: "scriptsize"
+#| code-fold: FALSE
+(fib_numbers = c(0,1,1,2,3,5,8,13,21,34))
+```
+
+
 ## Part b
 Triangular Numbers are the cumulative sums of natural numbers:
 $$F_n = \frac{n(n+1)}{2}.$$
 
 Create a vector of the first 10 Triangular Numbers. 
+
+**Solution**
+
+```{r}
+#| size: "scriptsize"
+#| code-fold: FALSE
+
+nums = seq(1,10)
+(triangular_nums = (nums*(nums+1))/2)
+```
+
 
 ## Part c
 Suppose I were designing a repeated meausres experiment with three treatment conditions. Each of $n=10$ participants (with `ID` 1 to 10) will receive *all* experimental conditions, call them "Control", "Treatment A", and "Treatment B". 
