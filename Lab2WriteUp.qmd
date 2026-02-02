@@ -246,5 +246,8 @@ Create a vector containing the `character` "MATH" and the `numeric` 240. What is
 #| size: "scriptsize"
 #| code-fold: FALSE
 
-test = 
+(weird_var = c("MATH", 240))
+(class(weird_var))
 ```
+
+The resulting class is of "character" now because vectors can only contain or be of one type only, so the numeric 240 is converted into a character "240", as character types are relatively more "flexible".
