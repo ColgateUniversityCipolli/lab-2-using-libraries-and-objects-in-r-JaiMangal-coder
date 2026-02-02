@@ -210,6 +210,7 @@ Create a vector of the first 10 Triangular Numbers.
 
 **Solution**
 
+Here, I can use seq() to create a vector of nums from 1-10, and then I can make another vector that transforms each of those numbers into the triangular numbers using the given formula. 
 ```{r}
 #| size: "scriptsize"
 #| code-fold: FALSE
@@ -227,5 +228,23 @@ Consider setting up data entry for this experiment.
 i. Create a vector containing each `ID` repeated three times, once for each treatment.
 ii. Create a vector containing each `Treatment` repeated for each participant ID.
 
+**Solution**
+```{r}
+#| size: "scriptsize"
+#| code-fold: FALSE
+
+(ID = rep(seq(1,10),each=3))
+(Treatment = rep(c("Control","Treatment A","Treatment B"), times=10))
+```
+
+
 ## Part d
 Create a vector containing the `character` "MATH" and the `numeric` 240. What is the resulting class? Explain why in a sentence.
+
+**Solution**
+```{r}
+#| size: "scriptsize"
+#| code-fold: FALSE
+
+test = 
+```
